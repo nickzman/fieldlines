@@ -1,0 +1,39 @@
+{
+    IBClasses = (
+        {
+            ACTIONS = {
+                checkUpdates = id; 
+                closeSheet_cancel = id; 
+                closeSheet_save = id; 
+                sheet_update = id; 
+            }; 
+            CLASS = FieldLinesView; 
+            LANGUAGE = ObjC; 
+            OUTLETS = {
+                IBChargeTxt = id; 
+                IBUpdatesInfo = id; 
+                IBdConstwidth = id; 
+                IBdElectric = id; 
+                IBdIons = id; 
+                IBdIonsTxt = id; 
+                IBdMaxSteps = id; 
+                IBdMaxStepsTxt = id; 
+                IBdSpeed = id; 
+                IBdSpeedTxt = id; 
+                IBdStepSize = id; 
+                IBdStepSizeTxt = id; 
+                IBdWidth = id; 
+                IBdWidthTxt = id; 
+                IBmainMonitorOnly = id; 
+                IBmaxCharge = id; 
+                IBminCharge = id; 
+                IBversionNumberField = id; 
+                configureSheet = id; 
+            }; 
+            SUPERCLASS = ScreenSaverView; 
+        }, 
+        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
+        {CLASS = ScreenSaverView; LANGUAGE = ObjC; SUPERCLASS = NSView; }
+    ); 
+    IBVersion = 1; 
+}

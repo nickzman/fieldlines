@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist SYSTEM "file://localhost/System/Library/DTDs/PropertyList.dtd">
+<plist version="0.9">
+<dict>
+	<key>IBDocumentLocation</key>
+	<string>116 69 488 622 0 0 1024 746 </string>
+	<key>IBFramework Version</key>
+	<string>248.0</string>
+	<key>IBGroupedObjects</key>
+	<dict>
+		<key>21</key>
+		<array>
+			<string>336</string>
+			<string>337</string>
+		</array>
+		<key>22</key>
+		<array>
+			<string>331</string>
+			<string>332</string>
+		</array>
+		<key>23</key>
+		<array>
+			<string>344</string>
+			<string>345</string>
+		</array>
+		<key>24</key>
+		<array>
+			<string>349</string>
+			<string>350</string>
+		</array>
+		<key>29</key>
+		<array>
+			<string>373</string>
+			<string>374</string>
+		</array>
+		<key>30</key>
+		<array>
+			<string>397</string>
+			<string>398</string>
+			<string>399</string>
+		</array>
+	</dict>
+	<key>IBLastGroupID</key>
+	<string>31</string>
+	<key>IBOpenObjects</key>
+	<array>
+		<integer>21</integer>
+	</array>
+	<key>IBSystem Version</key>
+	<string>5S66</string>
+</dict>
+</plist>

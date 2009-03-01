@@ -1,0 +1,297 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E04BEAEC0F5B4963002442CA /* FieldLines.nib in Resources */ = {isa = PBXBuildFile; fileRef = E04BEAEA0F5B4963002442CA /* FieldLines.nib */; };
+		E05B5BB809F2DADB00F644E4 /* FieldLinesView.h in Headers */ = {isa = PBXBuildFile; fileRef = F55AFC2002D6FAB201A80102 /* FieldLinesView.h */; };
+		E05B5BBB09F2DADB00F644E4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F5F485C402D8D3CE01A80102 /* Localizable.strings */; };
+		E05B5BBD09F2DADB00F644E4 /* FieldLinesView.mm in Sources */ = {isa = PBXBuildFile; fileRef = F55AFC1F02D6FAB201A80102 /* FieldLinesView.mm */; };
+		E05B5BBF09F2DADB00F644E4 /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0149AE530075FC557F000001 /* ScreenSaver.framework */; };
+		E05B5BC009F2DADB00F644E4 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F52066100194333401FFA40A /* AppKit.framework */; };
+		E05B5BC109F2DADB00F644E4 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F52F59D50204BF590188458E /* OpenGL.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0149AE530075FC557F000001 /* ScreenSaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScreenSaver.framework; path = /System/Library/Frameworks/ScreenSaver.framework; sourceTree = "<absolute>"; };
+		E04BEAEB0F5B4963002442CA /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/FieldLines.nib; sourceTree = "<group>"; };
+		E04BEAED0F5B4973002442CA /* French */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = French; path = French.lproj/FieldLines.nib; sourceTree = "<group>"; };
+		E04BEAEE0F5B4976002442CA /* Italian */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Italian; path = Italian.lproj/FieldLines.nib; sourceTree = "<group>"; };
+		E05B5BC709F2DADB00F644E4 /* Info-FieldLines.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-FieldLines.plist"; sourceTree = "<group>"; };
+		E05B5BC809F2DADC00F644E4 /* FieldLines.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FieldLines.saver; sourceTree = BUILT_PRODUCTS_DIR; };
+		F52066100194333401FFA40A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		F52F59D50204BF590188458E /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
+		F55AFC1F02D6FAB201A80102 /* FieldLinesView.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FieldLinesView.mm; sourceTree = "<group>"; };
+		F55AFC2002D6FAB201A80102 /* FieldLinesView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FieldLinesView.h; sourceTree = "<group>"; };
+		F5AA75AB02D77F0E01A80102 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F5F485C602D8D3FE01A80102 /* French */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = French; path = French.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F5F485CB02D905F201A80102 /* Italian */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Italian; path = Italian.lproj/Localizable.strings; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E05B5BBE09F2DADB00F644E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E05B5BBF09F2DADB00F644E4 /* ScreenSaver.framework in Frameworks */,
+				E05B5BC009F2DADB00F644E4 /* AppKit.framework in Frameworks */,
+				E05B5BC109F2DADB00F644E4 /* OpenGL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0149AE500075FABC7F000001 = {
+			isa = PBXGroup;
+			children = (
+				F55AFC1F02D6FAB201A80102 /* FieldLinesView.mm */,
+				F55AFC2002D6FAB201A80102 /* FieldLinesView.h */,
+				F5AA75A902D77EFA01A80102 /* Resources */,
+				0149AE520075FC557F000001 /* Frameworks */,
+				0149AE580075FD537F000001 /* Products */,
+				E05B5BC709F2DADB00F644E4 /* Info-FieldLines.plist */,
+			);
+			sourceTree = "<group>";
+		};
+		0149AE520075FC557F000001 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F52F59D50204BF590188458E /* OpenGL.framework */,
+				F52066100194333401FFA40A /* AppKit.framework */,
+				0149AE530075FC557F000001 /* ScreenSaver.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0149AE580075FD537F000001 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E05B5BC809F2DADC00F644E4 /* FieldLines.saver */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F5AA75A902D77EFA01A80102 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E04BEAEA0F5B4963002442CA /* FieldLines.nib */,
+				F5F485C402D8D3CE01A80102 /* Localizable.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		E05B5BB709F2DADB00F644E4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E05B5BB809F2DADB00F644E4 /* FieldLinesView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		E05B5BB609F2DADB00F644E4 /* FieldLines */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E05B5BC309F2DADB00F644E4 /* Build configuration list for PBXNativeTarget "FieldLines" */;
+			buildPhases = (
+				E05B5BB709F2DADB00F644E4 /* Headers */,
+				E05B5BB909F2DADB00F644E4 /* Resources */,
+				E05B5BBC09F2DADB00F644E4 /* Sources */,
+				E05B5BBE09F2DADB00F644E4 /* Frameworks */,
+				E05B5BC209F2DADB00F644E4 /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FieldLines;
+			productInstallPath = "";
+			productName = Hopalong;
+			productReference = E05B5BC809F2DADC00F644E4 /* FieldLines.saver */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0149AE4F0075FABC7F000001 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = E05B5BB009F2DABE00F644E4 /* Build configuration list for PBXProject "FieldLines" */;
+			compatibilityVersion = "Xcode 2.4";
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				Italian,
+			);
+			mainGroup = 0149AE500075FABC7F000001;
+			productRefGroup = 0149AE580075FD537F000001 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E05B5BB609F2DADB00F644E4 /* FieldLines */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E05B5BB909F2DADB00F644E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E05B5BBB09F2DADB00F644E4 /* Localizable.strings in Resources */,
+				E04BEAEC0F5B4963002442CA /* FieldLines.nib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXRezBuildPhase section */
+		E05B5BC209F2DADB00F644E4 /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXRezBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E05B5BBC09F2DADB00F644E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E05B5BBD09F2DADB00F644E4 /* FieldLinesView.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E04BEAEA0F5B4963002442CA /* FieldLines.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E04BEAEB0F5B4963002442CA /* English */,
+				E04BEAED0F5B4973002442CA /* French */,
+				E04BEAEE0F5B4976002442CA /* Italian */,
+			);
+			name = FieldLines.nib;
+			sourceTree = "<group>";
+		};
+		F5F485C402D8D3CE01A80102 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F5AA75AB02D77F0E01A80102 /* Localizable.strings */,
+				F5F485C602D8D3FE01A80102 /* French */,
+				F5F485CB02D905F201A80102 /* Italian */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E05B5BB109F2DABE00F644E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				SDKROOT_i386 = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT_ppc = /Developer/SDKs/MacOSX10.3.9.sdk;
+			};
+			name = Debug;
+		};
+		E05B5BB209F2DABE00F644E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				SDKROOT_i386 = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT_ppc = /Developer/SDKs/MacOSX10.3.9.sdk;
+			};
+			name = Release;
+		};
+		E05B5BC409F2DADB00F644E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = "bjC++";
+				INFOPLIST_FILE = "Info-FieldLines.plist";
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = "-fpermissive";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = FieldLines;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				WRAPPER_EXTENSION = saver;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		E05B5BC509F2DADB00F644E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_OPTIMIZATION_LEVEL = "bjC++";
+				INFOPLIST_FILE = "Info-FieldLines.plist";
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = "-fpermissive";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = FieldLines;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				WRAPPER_EXTENSION = saver;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E05B5BB009F2DABE00F644E4 /* Build configuration list for PBXProject "FieldLines" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E05B5BB109F2DABE00F644E4 /* Debug */,
+				E05B5BB209F2DABE00F644E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E05B5BC309F2DADB00F644E4 /* Build configuration list for PBXNativeTarget "FieldLines" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E05B5BC409F2DADB00F644E4 /* Debug */,
+				E05B5BC509F2DADB00F644E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0149AE4F0075FABC7F000001 /* Project object */;
+}
