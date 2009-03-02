@@ -81,19 +81,19 @@
     // Do your subclass initialization here
     version   = [defaults stringForKey:@"version"];
     mainMonitorOnly = [defaults boolForKey:@"mainMonitorOnly"];
-    dIons = [defaults integerForKey:@"dIons"];
-    dStepSize = [defaults integerForKey:@"dStepSize"];
-    dMaxSteps = [defaults integerForKey:@"dMaxSteps"];
-    dWidth = [defaults integerForKey:@"dWidth"];
-    dSpeed = [defaults integerForKey:@"dSpeed"];
+    dIons = int([defaults integerForKey:@"dIons"]);
+    dStepSize = int([defaults integerForKey:@"dStepSize"]);
+    dMaxSteps = int([defaults integerForKey:@"dMaxSteps"]);
+    dWidth = int([defaults integerForKey:@"dWidth"]);
+    dSpeed = int([defaults integerForKey:@"dSpeed"]);
     dConstwidth = [defaults boolForKey:@"dConstwidth"];
     dElectric = [defaults boolForKey:@"dElectric"];
-    minCharge = [defaults integerForKey:@"minCharge"];
-    maxCharge = [defaults integerForKey:@"maxCharge"];
+    minCharge = int([defaults integerForKey:@"minCharge"]);
+    maxCharge = int([defaults integerForKey:@"maxCharge"]);
     if( minCharge < 1 ) minCharge = 1;
     if( maxCharge < minCharge ) maxCharge = minCharge + 1;
-    updateDelay = [defaults integerForKey:@"updateDelay"];
-    colorMode = [defaults integerForKey:@"colorMode"];
+    updateDelay = int([defaults integerForKey:@"updateDelay"]);
+    colorMode = int([defaults integerForKey:@"colorMode"]);
         
     if( ![version isEqualToString:kVersion] || (version == NULL) ) {
         // first time ever !! 
@@ -144,7 +144,7 @@
     // If you want to use drawRect: just add setNeedsDisplay:YES to this method
 
     int i;
-    float s = sqrt(dStepSize*dStepSize * 0.333f);
+    float s = sqrtf(dStepSize*dStepSize * 0.333f);
 
     if( thisScreenIsOn == FALSE ) {
         [self stopAnimation];
@@ -186,7 +186,7 @@
 {
     // Do your animation initialization here
     NSOpenGLContext *context;
-	long interval = 1;
+	GLint interval = 1;
 
     int mainScreen;
     int thisScreen;
@@ -207,7 +207,7 @@
 
     context = [_view openGLContext];
     [context makeCurrentContext];
-    glClearColor(0.0, 0.0, 0.0, 0.0);
+    glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glFlush();
 	CGLSetParameter(CGLGetCurrentContext(), kCGLCPSwapInterval, &interval);	// don't allow screen tearing
@@ -277,20 +277,20 @@
             [thisBundle localizedStringForKey:@"Refresh after %d min." value:@"" table:@""], updateDelay/60]];
     }
     else {
-        [IBupdateDelayTxt setStringValue:[NSString stringWithFormat:
-            [thisBundle localizedStringForKey:@"Refresh: never" value:@"" table:@""]]];
+        [IBupdateDelayTxt setStringValue:
+            [thisBundle localizedStringForKey:@"Refresh: never" value:@"" table:@""]];
     }
     
     [IBdConstwidth setTitle:[thisBundle localizedStringForKey:@"Constant Width" value:@"" table:@""]];
     [IBdElectric setTitle:[thisBundle localizedStringForKey:@"Electric mode" value:@"" table:@""]];
 
-    [IBColorsTxt setStringValue:[NSString stringWithFormat:
-        [thisBundle localizedStringForKey:@"Colors" value:@"" table:@""]]];
+    [IBColorsTxt setStringValue:
+        [thisBundle localizedStringForKey:@"Colors" value:@"" table:@""]];
     [IBColors removeAllItems];
-    [IBColors addItemWithTitle:[NSString stringWithFormat:
-        [thisBundle localizedStringForKey:@"Original" value:@"" table:@""]]];
-    [IBColors addItemWithTitle:[NSString stringWithFormat:
-        [thisBundle localizedStringForKey:@"Electric potential" value:@"" table:@""]]];
+    [IBColors addItemWithTitle:
+        [thisBundle localizedStringForKey:@"Original" value:@"" table:@""]];
+    [IBColors addItemWithTitle:
+        [thisBundle localizedStringForKey:@"Electric potential" value:@"" table:@""]];
     [IBColors selectItemAtIndex:colorMode];
     
     [IBmainMonitorOnly setTitle:[thisBundle localizedStringForKey:@"Main monitor only" value:@"" table:@""]];
@@ -356,8 +356,8 @@
                 [thisBundle localizedStringForKey:@"Refresh after %d min." value:@"" table:@""], fooInt/60]];
         }
         else {
-            [IBupdateDelayTxt setStringValue:[NSString stringWithFormat:
-                [thisBundle localizedStringForKey:@"Refresh: never" value:@"" table:@""]]];
+            [IBupdateDelayTxt setStringValue:
+                [thisBundle localizedStringForKey:@"Refresh: never" value:@"" table:@""]];
         }
     }
 }
@@ -385,7 +385,7 @@
     minCharge = [IBminCharge intValue];
     maxCharge = [IBmaxCharge intValue];
     updateDelay = [IBupdateDelay intValue]*60;
-    colorMode = [IBColors indexOfSelectedItem];
+    colorMode = int([IBColors indexOfSelectedItem]);
         
     [defaults setBool: mainMonitorOnly forKey: @"mainMonitorOnly"];
     [defaults setInteger: dIons forKey: @"dIons"];
@@ -472,7 +472,7 @@
     
     // gluPerspective(80.0, float(rect.right) / float(rect.bottom), 50, 3000);
     gluPerspective(80.0, (GLfloat)windowWidth/(GLfloat)windowHeight, 50, 3000);
-    glTranslatef(0.0, 0.0, -(wide * 2));
+    glTranslatef(0.0f, 0.0f, -(wide * 2));
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
 
@@ -521,9 +521,9 @@
 
     // Do the first segment
     // if( colorMode == 0 ) {
-        r = fabs(dir[2]) * brightness;
-        g = fabs(dir[0]) * brightness;
-        b = fabs(dir[1]) * brightness;
+        r = fabsf(dir[2]) * brightness;
+        g = fabsf(dir[0]) * brightness;
+        b = fabsf(dir[1]) * brightness;
         if(r > 1.0f)
             r = 1.0f;
         if(g > 1.0f)
@@ -551,9 +551,9 @@
     xyz[1] = lastxyz[1] + dir[1];
     xyz[2] = lastxyz[2] + dir[2];
     if(dElectric){
-        xyz[0] += SSRandomFloatBetween(0.0, dStepSize * 0.3f) - (dStepSize * 0.15f);
-        xyz[1] += SSRandomFloatBetween(0.0, dStepSize * 0.3f) - (dStepSize * 0.15f);
-        xyz[2] += SSRandomFloatBetween(0.0, dStepSize * 0.3f) - (dStepSize * 0.15f);
+        xyz[0] += float(SSRandomFloatBetween(0.0f, dStepSize * 0.3f)) - (dStepSize * 0.15f);
+        xyz[1] += float(SSRandomFloatBetween(0.0f, dStepSize * 0.3f)) - (dStepSize * 0.15f);
+        xyz[2] += float(SSRandomFloatBetween(0.0f, dStepSize * 0.3f)) - (dStepSize * 0.15f);
     }
     if(!dConstwidth)
         glLineWidth((xyz[2] + 300.0f) * 0.000333f * dWidth);
@@ -576,7 +576,7 @@
             tempvec[1] = xyz[1] - ions[j].xyz[1];
             tempvec[2] = xyz[2] - ions[j].xyz[2];
             distsquared = tempvec[0] * tempvec[0] + tempvec[1] * tempvec[1] + tempvec[2] * tempvec[2];
-            dist = sqrt(distsquared);
+            dist = sqrtf(distsquared);
             if(dist < dStepSize && i > 2){
                 end[0] = ions[j].xyz[0];
                 end[1] = ions[j].xyz[1];
@@ -594,9 +594,9 @@
         lastb = b;
 
         // if( colorMode == 0 ) {
-            r = fabs(dir[2]) * brightness;
-            g = fabs(dir[0]) * brightness;
-            b = fabs(dir[1]) * brightness;
+            r = fabsf(dir[2]) * brightness;
+            g = fabsf(dir[0]) * brightness;
+            b = fabsf(dir[1]) * brightness;
         /* }
         else {
             float hue;
@@ -639,14 +639,14 @@
         if(b > 1.0f)
             b = 1.0f;
         distsquared = dir[0] * dir[0] + dir[1] * dir[1] + dir[2] * dir[2];
-        distrec = dStepSize / sqrt(distsquared);
+        distrec = dStepSize / sqrtf(distsquared);
         dir[0] *= distrec;
         dir[1] *= distrec;
         dir[2] *= distrec;
         if(dElectric){
-            dir[0] += SSRandomFloatBetween(0.0, dStepSize) - (dStepSize * 0.5f);
-            dir[1] += SSRandomFloatBetween(0.0, dStepSize) - (dStepSize * 0.5f);
-            dir[2] += SSRandomFloatBetween(0.0, dStepSize) - (dStepSize * 0.5f);
+            dir[0] += float(SSRandomFloatBetween(0.0f, dStepSize)) - (dStepSize * 0.5f);
+            dir[1] += float(SSRandomFloatBetween(0.0f, dStepSize)) - (dStepSize * 0.5f);
+            dir[2] += float(SSRandomFloatBetween(0.0f, dStepSize)) - (dStepSize * 0.5f);
         }
         lastxyz[0] = xyz[0];
         lastxyz[1] = xyz[1];
@@ -679,7 +679,7 @@
 
 - (void) setup_all
 {
-    srandom(time(NULL));
+    srandom(int(time(NULL)));
     
     if( ions ) {
         delete[] ions;
@@ -696,10 +696,10 @@
 
 ion::ion(int dSpeed, int min, int max){
 
-    charge = random() % 2;
+    charge = (int)random() % 2;
     if(charge == 0.0f)
         charge = -1.0f;
-    int foo = min + (random() % (max-min));
+    int foo = min + ((int)random() % (max-min));
     charge *= foo;
     xyz[0] = float(random()) / RAND_MAX * 2.0f * float(wide) - float(wide);
     xyz[1] = float(random()) / RAND_MAX * 2.0f * float(high) - float(high);
