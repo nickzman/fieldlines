@@ -144,7 +144,7 @@
     // If you want to use drawRect: just add setNeedsDisplay:YES to this method
 
     int i;
-    float s = sqrtf(dStepSize*dStepSize * 0.333f);
+    float s = sqrtf(float(dStepSize)*float(dStepSize) * 0.333f);
 
     if( thisScreenIsOn == FALSE ) {
         [self stopAnimation];
@@ -337,15 +337,25 @@
     }
     else if( sender == IBminCharge ) {
         fooInt = [IBminCharge intValue];
-        if( fooInt > [IBmaxCharge intValue] )
-            [IBmaxCharge setIntValue:fooInt];
+		if (fooInt >= int([IBminCharge maxValue]))
+		{
+			fooInt = int([IBminCharge maxValue])-1;
+			[IBminCharge setIntValue:fooInt];
+		}
+        if( fooInt >= [IBmaxCharge intValue] )
+            [IBmaxCharge setIntValue:fooInt+1];
         [IBChargeTxt setStringValue:[NSString stringWithFormat:
             [thisBundle localizedStringForKey:@"Charge value (%d-%d)" value:@"" table:@""], fooInt, [IBmaxCharge intValue]]];
     }
     else if( sender == IBmaxCharge ) {
         fooInt = [IBmaxCharge intValue];
-        if( fooInt < [IBminCharge intValue] )
-            [IBminCharge setIntValue:fooInt];
+		if (fooInt <= int([IBmaxCharge minValue]))
+		{
+			fooInt = int([IBmaxCharge minValue])+1;
+			[IBmaxCharge setIntValue:fooInt];
+		}
+        if( fooInt <= [IBminCharge intValue] )
+            [IBminCharge setIntValue:fooInt-1];
         [IBChargeTxt setStringValue:[NSString stringWithFormat:
             [thisBundle localizedStringForKey:@"Charge value (%d-%d)" value:@"" table:@""], [IBminCharge intValue], fooInt]];
     }
@@ -686,7 +696,8 @@
         ions = 0;
     }
     ionsNo = dIons;
-    // maxcharge = minRep = maxRep = 0;
+    if (minCharge >= maxCharge)	// previous versions of this screen saver had a zero divide bug that occurred if minCharge and maxCharge were equal; don't allow that to happen
+		maxCharge++;
     ions = new ion[dIons](dSpeed, minCharge, maxCharge);
 
     targetTime = time(0) + updateDelay;
