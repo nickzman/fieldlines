@@ -85,7 +85,6 @@
 				if (settings.minCharge < 1) settings.minCharge = 1;
 				if (settings.maxCharge < settings.minCharge) settings.maxCharge = settings.minCharge+1;
 				updateDelay = int([defaults integerForKey:@"updateDelay"]);
-				colorMode = int([defaults integerForKey:@"colorMode"]);
 			}
 			
 			NSRect newBounds = [_view convertRectToBacking:_view.bounds];
@@ -269,16 +268,7 @@
     
     [IBdConstwidth setTitle:[thisBundle localizedStringForKey:@"Constant Width" value:@"" table:@""]];
     [IBdElectric setTitle:[thisBundle localizedStringForKey:@"Electric mode" value:@"" table:@""]];
-
-    [IBColorsTxt setStringValue:
-        [thisBundle localizedStringForKey:@"Colors" value:@"" table:@""]];
-    [IBColors removeAllItems];
-    [IBColors addItemWithTitle:
-        [thisBundle localizedStringForKey:@"Original" value:@"" table:@""]];
-    [IBColors addItemWithTitle:
-        [thisBundle localizedStringForKey:@"Electric potential" value:@"" table:@""]];
-    [IBColors selectItemAtIndex:colorMode];
-    
+	
     [IBmainMonitorOnly setTitle:[thisBundle localizedStringForKey:@"Main monitor only" value:@"" table:@""]];
     [IBCancel setTitle:[thisBundle localizedStringForKey:@"Cancel" value:@"" table:@""]];
     [IBSave setTitle:[thisBundle localizedStringForKey:@"Save" value:@"" table:@""]];
@@ -378,7 +368,6 @@
     settings.minCharge = [IBminCharge intValue];
     settings.maxCharge = [IBmaxCharge intValue];
     updateDelay = [IBupdateDelay intValue]*60;
-    colorMode = int([IBColors indexOfSelectedItem]);
         
     [defaults setBool: mainMonitorOnly forKey: @"mainMonitorOnly"];
     [defaults setInteger: settings.dIons forKey: @"dIons"];
@@ -391,7 +380,6 @@
     [defaults setInteger: settings.minCharge forKey: @"minCharge"];
     [defaults setInteger: settings.maxCharge forKey: @"maxCharge"];
     [defaults setInteger: updateDelay forKey: @"updateDelay"];
-    [defaults setInteger: colorMode forKey: @"colorMode"];
     
     [defaults synchronize];
 

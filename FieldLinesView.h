@@ -55,12 +55,6 @@
     int updateDelay;
     IBOutlet id IBupdateDelay;
     IBOutlet id IBupdateDelayTxt;
-
-    int colorMode;
-    IBOutlet id IBColorsTxt;
-    IBOutlet id IBColors;
-    // int maxcharge; // max charge in the system;
-    // float minRep, maxRep;
     
     IBOutlet id configureSheet;
     IBOutlet id IBversionNumberField;
