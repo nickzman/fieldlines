@@ -1,0 +1,48 @@
+
+/* Class = "NSWindow"; title = "Configure"; ObjectID = "21"; */
+"21.title" = "Configure";
+
+/* Class = "NSTextFieldCell"; title = "FieldLines"; ObjectID = "424"; */
+"424.title" = "FieldLines";
+
+/* Class = "NSTextFieldCell"; title = "(ver#)"; ObjectID = "425"; */
+"425.title" = "(ver#)";
+
+/* Class = "NSTextFieldCell"; title = "Copyright © 1999-2010 Terence M. Welsh. All Rights Reserved.\nmacOS port by Nick Zitzmann, based on earlier work by UselessSoftware Ltd."; ObjectID = "426"; */
+"426.title" = "Copyright © 1999-2010 Terence M. Welsh. All Rights Reserved.\nmacOS port by Nick Zitzmann, based on earlier work by UselessSoftware Ltd.";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "428"; */
+"428.title" = "Cancella";
+
+/* Class = "NSButtonCell"; title = "Save"; ObjectID = "429"; */
+"429.title" = "Salva";
+
+/* Class = "NSButtonCell"; title = "Main monitor only"; ObjectID = "430"; */
+"430.title" = "Solo monitor principale";
+
+/* Class = "NSTextFieldCell"; title = "Speed"; ObjectID = "431"; */
+"431.title" = "Velocità";
+
+/* Class = "NSTextFieldCell"; title = "Ions number"; ObjectID = "433"; */
+"433.title" = "Numero ioni";
+
+/* Class = "NSTextFieldCell"; title = "Step Size"; ObjectID = "435"; */
+"435.title" = "Dim. Passi";
+
+/* Class = "NSTextFieldCell"; title = "Max Steps"; ObjectID = "437"; */
+"437.title" = "Max Passi";
+
+/* Class = "NSTextFieldCell"; title = "Line Width"; ObjectID = "439"; */
+"439.title" = "Largh. Linea";
+
+/* Class = "NSButtonCell"; title = "Constant Width"; ObjectID = "441"; */
+"441.title" = "Larghezza costante";
+
+/* Class = "NSButtonCell"; title = "Electric mode"; ObjectID = "442"; */
+"442.title" = "Modalità Elettrica";
+
+/* Class = "NSTextFieldCell"; title = "Charge value (10-10)"; ObjectID = "443"; */
+"443.title" = "Valore carica (10-10)";
+
+/* Class = "NSTextFieldCell"; title = "Reinizializzazione dopo %d min."; ObjectID = "446"; */
+"446.title" = "Reinizializzazione dopo %d min.";

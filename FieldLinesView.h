@@ -11,93 +11,45 @@
 #include <time.h>
 #import <OpenGL/gl.h>
 #import <OpenGL/glu.h>
+#import "FieldLines.h"
+#import "rsTimer.h"
 
-
-/* each drawn line is represented as a LineSegment */
-typedef struct xpoint_s
+@interface FieldLinesView : ScreenSaverView
 {
-    int x;
-    int y;
-} XPoint;
-
-typedef struct {
-    float red;
-    float green;
-    float blue;
-} RGBcolor;
-
-class ion{
-public:
-    float charge;
-    float xyz[3];
-    float vel[3];
-    float angle;
-    float anglevel;
-
-    inline ion(int dSpeed, int min, int max);
-    inline ~ion();
-    inline void update(int dSpeed);
-};
-
-
-@interface FieldLinesView : ScreenSaverView {
-    
+	BOOL mainMonitor;
     BOOL mainMonitorOnly;
     BOOL thisScreenIsOn;
 
     NSOpenGLView *_view;
-    BOOL _viewAllocated;
-    BOOL _initedGL;
-    BOOL initialized;
+	BOOL _configuring;
     time_t targetTime;
     
+	FieldLinesSaverSettings settings;
+	rsTimer timer;
     
     /****** non-user-modifiable immutable definitions */
 
-
-    /* width and height of the window */
-    int windowWidth;
-    int windowHeight;
-
-    /* center position of the window */
-    int centerX;
-    int centerY;
-
-    RGBcolor *gcs;           /* array of colors */
-
-    ion* ions;
-    
-    /* parameters that are user configurable */
-
-    int dIons, ionsNo;
     IBOutlet id IBdIons;
     IBOutlet id IBdIonsTxt;
 
-    int minCharge, maxCharge;
     IBOutlet id IBminCharge;
     IBOutlet id IBmaxCharge;
     IBOutlet id IBChargeTxt;
     
-    int dSpeed;
     IBOutlet id IBdSpeed;
     IBOutlet id IBdSpeedTxt;
 
-    BOOL dConstwidth;
     IBOutlet id IBdConstwidth;
 
-    int dWidth;
     IBOutlet id IBdWidth;
     IBOutlet id IBdWidthTxt;
 
-    int dStepSize;
     IBOutlet id IBdStepSize;
     IBOutlet id IBdStepSizeTxt;
 
-    int dMaxSteps;
     IBOutlet id IBdMaxSteps;
     IBOutlet id IBdMaxStepsTxt;
     
-    BOOL dElectric;
     IBOutlet id IBdElectric;
 
     int updateDelay;
@@ -122,8 +74,4 @@ public:
 - (IBAction) closeSheet_cancel:(id) sender;
 - (IBAction) sheet_update:(id) sender;
 
-- (GLvoid) InitGL;
-
-- (void) drawfieldline:(int) source the_x:(float) x the_y:(float) y the_z:(float) z;
-- (void) setup_all;
 @end
